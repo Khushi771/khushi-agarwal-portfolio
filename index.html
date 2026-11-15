@@ -252,10 +252,11 @@
     .work-column-note { color: var(--muted); font-size: 9px; }
     .work-grid { width: 100%; height: auto; min-height: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 9px; }
     .work-grid .card { padding: 9px 10px 10px; }
-    .work-grid .card-art { flex-basis: 42px; margin-bottom: 5px; }
+    .work-grid .card-art { flex-basis: 64px; margin-bottom: 5px; }
     .work-grid .card .tag { font-size: 8px; }
     .work-grid .card h3 { margin: 5px 0 4px; font-size: 13px; }
     .work-grid .card p { font-size: 9px; line-height: 1.38; }
+    .work-grid .card > div:last-child { display: flex; flex: 1; flex-direction: column; }
     .work-grid .card-meta { gap: 4px; padding-top: 5px; }
     .work-grid .card-meta span { padding: 3px 5px; font-size: 8px; }
     .mobile-view-toggle { display: none; }
@@ -284,9 +285,9 @@
       .focus-card { padding: 6px 9px; }
       .focus-card h3 { font-size: 12px; }
       .focus-card p { font-size: 8px; }
-      .work-grid .card-art { flex-basis: 36px; }
-      .work-grid .card p { font-size: 8px; }
-      .work-grid .card-meta { display: none; }
+      .work-grid .card-art { flex-basis: 56px; }
+      .work-grid .card p { font-size: 9px; }
+      .work-grid .card-meta { display: flex; }
       .work-column-note { display: none; }
     }
 
