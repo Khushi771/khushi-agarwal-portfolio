@@ -116,7 +116,13 @@
     .role-overview .place { margin-bottom: 7px; }
     .focus-heading { align-self: end; margin: 0; color: var(--muted); text-transform: uppercase; letter-spacing: .14em; font-size: 9px; font-weight: 700; }
     .focus-grid { min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-    .focus-card { min-width: 0; min-height: 0; display: flex; flex-direction: column; justify-content: center; padding: 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+    .focus-card { --focus-bg: #f0f2ff; --focus-accent: #5b64df; min-width: 0; min-height: 0; display: flex; flex-direction: column; justify-content: center; padding: 20px; border: 1px solid color-mix(in srgb, var(--focus-accent) 18%, var(--line)); border-radius: 8px; background: var(--focus-bg); box-shadow: inset 0 3px var(--focus-accent); }
+    .focus-card:nth-child(2) { --focus-bg: #edf8f5; --focus-accent: #27877a; }
+    .focus-card:nth-child(3) { --focus-bg: #fff4e9; --focus-accent: #c47a37; }
+    .focus-card .focus-tags { color: var(--focus-accent); }
+    body[data-theme="dark"] .focus-card { --focus-bg: #242944; --focus-accent: #aab1ff; }
+    body[data-theme="dark"] .focus-card:nth-child(2) { --focus-bg: #1d3437; --focus-accent: #83d6c4; }
+    body[data-theme="dark"] .focus-card:nth-child(3) { --focus-bg: #392d24; --focus-accent: #f0b276; }
     .focus-card h3 { margin: 0 0 10px; font-size: 17px; }
     .focus-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
     .focus-tags { margin-top: 9px; color: var(--accent); font-size: 9px; }
