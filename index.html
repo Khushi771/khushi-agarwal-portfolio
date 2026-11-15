@@ -224,6 +224,72 @@
       .personal-note { font-size: 10px; }
       .work-grid { height: calc(100% - 120px); }
     }
+
+    .experience-panel { display: grid; grid-template-rows: auto minmax(0, 1fr); padding-block: 20px; }
+    .experience-panel .section-head { align-items: center; gap: 22px; margin-bottom: 12px; }
+    .experience-panel .section-kicker { margin-bottom: 5px; font-size: 9px; }
+    .experience-panel h2 { font-size: clamp(28px, 3.2vw, 36px); }
+    .combined-layout { min-height: 0; display: grid; grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); gap: 13px; }
+    .career-column { min-width: 0; min-height: 0; display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; gap: 7px; }
+    .role-overview { grid-template-columns: 94px minmax(0, 1fr); align-items: start; gap: 10px; padding: 10px 12px; }
+    .role-overview .period { font-size: 9px; }
+    .role-overview h3 { font-size: 16px; }
+    .role-overview .place { margin-bottom: 4px; font-size: 9px; }
+    .role-overview .body-copy { font-size: 10px; line-height: 1.4; }
+    .focus-heading { align-self: center; font-size: 8px; }
+    .focus-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 6px; }
+    .focus-card { justify-content: center; padding: 7px 11px; }
+    .focus-card h3 { margin-bottom: 3px; font-size: 14px; }
+    .focus-card p { font-size: 9px; line-height: 1.35; }
+    .focus-tags { margin-top: 4px; font-size: 8px; }
+    .internship { padding: 8px 11px; }
+    .internship h3 { font-size: 14px; }
+    .internship .place, .internship .period { font-size: 8px; }
+    .internship .body-copy { font-size: 9px; line-height: 1.35; }
+    .work-column { min-width: 0; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 7px; }
+    .work-column-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+    .work-column-head .section-kicker { margin: 0; }
+    .work-column-note { color: var(--muted); font-size: 9px; }
+    .work-grid { width: 100%; height: auto; min-height: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 9px; }
+    .work-grid .card { padding: 9px 10px 10px; }
+    .work-grid .card-art { flex-basis: 42px; margin-bottom: 5px; }
+    .work-grid .card .tag { font-size: 8px; }
+    .work-grid .card h3 { margin: 5px 0 4px; font-size: 13px; }
+    .work-grid .card p { font-size: 9px; line-height: 1.38; }
+    .work-grid .card-meta { gap: 4px; padding-top: 5px; }
+    .work-grid .card-meta span { padding: 3px 5px; font-size: 8px; }
+    .mobile-view-toggle { display: none; }
+    @media (max-width: 760px) {
+      .experience-panel { grid-template-rows: auto auto minmax(0, 1fr); padding-block: 16px; }
+      .experience-panel .section-head { flex-direction: row; gap: 10px; margin-bottom: 8px; }
+      .experience-panel .section-note { display: none; }
+      .experience-panel h2 { font-size: 29px; }
+      .mobile-view-toggle { display: flex; gap: 5px; margin-bottom: 7px; padding: 3px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
+      .mobile-view-toggle button { flex: 1; min-height: 28px; border: 0; border-radius: 5px; background: transparent; color: var(--muted); font: 600 10px var(--sans); }
+      .mobile-view-toggle button[aria-pressed="true"] { background: var(--soft); color: var(--accent); }
+      .combined-layout { display: block; }
+      .career-column, .work-column { height: 100%; }
+      .combined-layout[data-mobile-view="career"] .work-column { display: none; }
+      .combined-layout[data-mobile-view="work"] .career-column { display: none; }
+      .work-grid { height: calc(100% - 23px); gap: 7px; }
+      .work-grid .card { padding: 8px; }
+      .work-grid .card-art { flex-basis: 42px; }
+    }
+    @media (max-width: 520px) {
+      .experience-panel .section-head { margin-bottom: 6px; }
+      .experience-panel h2 { font-size: 27px; }
+      .role-overview { grid-template-columns: 76px minmax(0, 1fr); gap: 7px; padding: 8px; }
+      .role-overview .period { font-size: 8px; }
+      .role-overview .body-copy { font-size: 9px; }
+      .focus-card { padding: 6px 9px; }
+      .focus-card h3 { font-size: 12px; }
+      .focus-card p { font-size: 8px; }
+      .work-grid .card-art { flex-basis: 36px; }
+      .work-grid .card p { font-size: 8px; }
+      .work-grid .card-meta { display: none; }
+      .work-column-note { display: none; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
       .brand-name { width: 6ch; }
@@ -239,7 +305,6 @@
         <nav role="tablist" aria-label="Portfolio sections">
           <button class="tab" id="tab-home" type="button" role="tab" aria-controls="panel-home" aria-selected="true">Home</button>
           <button class="tab" id="tab-experience" type="button" role="tab" aria-controls="panel-experience" aria-selected="false" tabindex="-1">Experience</button>
-          <button class="tab" id="tab-work" type="button" role="tab" aria-controls="panel-work" aria-selected="false" tabindex="-1">Highlights</button>
         </nav>
         <div class="header-actions">
           <a class="connect-link" href="https://www.linkedin.com/in/khushi771" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -257,7 +322,7 @@
           <div class="eyebrow">AI Software Engineer · Bengaluru, India</div>
           <h1>Building useful AI<br>and <em>software systems.</em></h1>
           <p class="intro">I’m Khushi Agarwal, an AI Software Engineer who enjoys turning ideas into practical software. After studying Mechanical Engineering at IIT Guwahati, I found my way into AI and backend development, where I enjoy learning, sharing ideas, and helping others grow through mentoring.</p>
-          <div class="hero-links"><button class="button" type="button" data-open-tab="work">Explore my work <span aria-hidden="true">&nbsp;↓</span></button><a class="button secondary" href="https://www.linkedin.com/in/khushi771" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">&nbsp;↗</span></a></div>
+          <div class="hero-links"><button class="button" type="button" data-open-tab="experience">Explore my work <span aria-hidden="true">&nbsp;↓</span></button><a class="button secondary" href="https://www.linkedin.com/in/khushi771" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">&nbsp;↗</span></a></div>
         </div>
         <div class="hero-art" aria-label="Abstract illustration representing AI and software systems" role="img">
           <div class="art-glow"></div><div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div>
@@ -267,9 +332,14 @@
       </section>
 
       <section class="panel experience-panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="0" hidden>
-        <div class="section-head"><div class="section-title"><span class="section-kicker">01 / Career</span><h2>Experience</h2></div><p class="section-note">I work across applied AI, backend services, and workflow platforms, partnering with business and engineering teams to turn complex needs into useful, dependable software.</p></div>
-        <div class="experience-content">
-        <article class="role-overview"><div class="period">Aug 2024 — Present<br>Bengaluru, India</div><div><h3>Development Engineer</h3><p class="place">Standard Chartered Global Banking Services</p><p class="body-copy">My current role brings together product thinking and hands-on engineering. I help clarify business needs, shape technical approaches, and build capabilities that can be adopted by teams across a large, regulated organization.</p></div></article>
+        <div class="section-head"><div class="section-title"><span class="section-kicker">01 / Career & selected work</span><h2>Experience & work</h2></div><p class="section-note">A snapshot of the roles I have held and the kinds of systems I enjoy building.</p></div>
+        <div class="mobile-view-toggle" aria-label="Choose a view">
+          <button type="button" data-mobile-view="career" aria-pressed="true">Career</button>
+          <button type="button" data-mobile-view="work" aria-pressed="false">Highlights</button>
+        </div>
+        <div class="combined-layout" data-mobile-view="career">
+          <div class="career-column">
+<article class="role-overview"><div class="period">Aug 2024 — Present<br>Bengaluru, India</div><div><h3>Development Engineer</h3><p class="place">Standard Chartered Global Banking Services</p><p class="body-copy">My current role brings together product thinking and hands-on engineering. I help clarify business needs, shape technical approaches, and build capabilities that can be adopted by teams across a large, regulated organization.</p></div></article>
         <div class="focus-heading">Areas I contribute to</div>
         <div class="focus-grid">
           <article class="focus-card"><h3>Applied AI</h3><p>Turn expert knowledge into document workflows, and explore ways to make language-model results more useful and grounded.</p><div class="focus-tags">LLMs · RAG · Elasticsearch</div></article>
@@ -277,26 +347,28 @@
           <article class="focus-card"><h3>Backend systems</h3><p>Develop services that coordinate multi-step processes, with attention to reliability, traceability, and maintainability.</p><div class="focus-tags">Quarkus · Microservices · APIs</div></article>
         </div>
         <article class="internship"><div class="internship-line"><h3>Technology Intern</h3><span class="place">Standard Chartered Global Banking Services · Chennai</span><span class="period">May — Jul 2023</span></div><p class="body-copy">Used Python to explore transaction patterns and develop customer segments for data-informed decision-making.</p></article>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" tabindex="0" hidden>
-        <div class="section-head"><div class="section-title"><span class="section-kicker">02 / Focus areas</span><h2>Engineering Highlights</h2></div><p class="section-note">A few themes from my work across applied AI, platform engineering, and backend systems. I keep these descriptions high-level and leave out internal project details.</p></div>
+          </div>
+          <div class="work-column">
+            <div class="work-column-head"><span class="section-kicker">Selected work · 02</span><span class="work-column-note">High-level themes from my work</span></div>
         <div class="work-grid">
           <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><rect x="38" y="20" width="62" height="78" rx="6" fill="#fff" stroke="#cbd0ec"/><path d="M52 40h34M52 51h27M52 62h31M52 73h19" stroke="#929bdd" stroke-width="3" stroke-linecap="round"/><circle cx="183" cy="58" r="20" fill="#e9eaff" stroke="#a9aff0"/><circle cx="260" cy="35" r="10" fill="#d9ddff"/><circle cx="267" cy="83" r="13" fill="#d9ddff"/><path d="m101 58 62 0m40-8 48-13m-48 29 51 15m13-42 95 0m-95 44 95 0" stroke="#838ce0" stroke-width="2" stroke-dasharray="4 5"/><rect x="359" y="23" width="130" height="26" rx="13" fill="#f1f2ff"/><rect x="359" y="64" width="180" height="26" rx="13" fill="#e9eaff"/><circle cx="376" cy="36" r="5" fill="#6874d9"/><circle cx="376" cy="77" r="5" fill="#6874d9"/><path d="M390 36h80m-80 41h123" stroke="#a0a7e8" stroke-width="3" stroke-linecap="round"/></svg></div><div class="card-top"><div class="tag">Applied AI · Retrieval</div><span class="card-index">01</span></div><div><h3>Smarter document workflows</h3><p>Worked on AI-assisted document processing, translating expert knowledge into structured workflows and exploring ways to make language-model outputs more useful and grounded.</p><div class="card-meta"><span>LLMs</span><span>RAG</span><span>Process design</span></div></div></article>
           <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><rect x="36" y="35" width="94" height="44" rx="8" fill="#fff" stroke="#cbd0ec"/><rect x="255" y="18" width="94" height="44" rx="8" fill="#f1f2ff" stroke="#cbd0ec"/><rect x="255" y="68" width="94" height="38" rx="8" fill="#f1f2ff" stroke="#cbd0ec"/><rect x="468" y="35" width="94" height="44" rx="8" fill="#fff" stroke="#cbd0ec"/><path d="M130 57h61q17 0 17-17v0q0-10 17-10h30m-108 27h30q17 0 17 17v0q0 13 17 13h30m94-57h50q18 0 18 18v9m-68 30h50q18 0 18-18V62" stroke="#838ce0" stroke-width="3" stroke-linecap="round"/><circle cx="83" cy="57" r="8" fill="#737edf"/><circle cx="302" cy="40" r="8" fill="#737edf"/><circle cx="302" cy="87" r="8" fill="#737edf"/><circle cx="515" cy="57" r="8" fill="#737edf"/><path d="M98 57h17m202-17h17m-17 47h17m202-30h17" stroke="#a0a7e8" stroke-width="3" stroke-linecap="round"/></svg></div><div class="card-top"><div class="tag">Backend · Developer experience</div><span class="card-index">02</span></div><div><h3>Reusable workflow foundations</h3><p>Created shared workflow capabilities and deployment patterns that helped teams integrate process automation more consistently across services and environments.</p><div class="card-meta"><span>Microservices</span><span>Workflow systems</span><span>Platform</span></div></div></article>
           <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><rect x="54" y="18" width="91" height="82" rx="8" fill="#fff" stroke="#cbd0ec"/><path d="M75 40h50M75 54h50M75 68h50M75 82h34" stroke="#a0a7e8" stroke-width="4" stroke-linecap="round"/><circle cx="99" cy="31" r="3" fill="#737edf"/><path d="M145 59h71m0 0 35-27m-35 27 35 27m0-54h53m-53 54h53m0-54 36 27m-36 27 36-27h87" stroke="#838ce0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 5"/><circle cx="216" cy="59" r="7" fill="#737edf"/><circle cx="251" cy="32" r="7" fill="#aeb4f2"/><circle cx="251" cy="86" r="7" fill="#aeb4f2"/><circle cx="304" cy="32" r="7" fill="#737edf"/><circle cx="304" cy="86" r="7" fill="#737edf"/><rect x="396" y="23" width="127" height="72" rx="8" fill="#f1f2ff" stroke="#cbd0ec"/><path d="M414 43h91m-91 15h69m-69 15h80" stroke="#a0a7e8" stroke-width="4" stroke-linecap="round"/><circle cx="500" cy="43" r="3" fill="#737edf"/></svg></div><div class="card-top"><div class="tag">Microservices · Orchestration</div><span class="card-index">03</span></div><div><h3>Coordinating complex processes</h3><p>Developed backend services and workflow orchestration for multi-step processes, with an emphasis on traceability, reliability, and collaboration with business stakeholders.</p><div class="card-meta"><span>Java</span><span>REST APIs</span><span>Orchestration</span></div></div></article>
           <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><path d="M52 78h493" stroke="#cbd0ec" stroke-width="2"/><rect x="87" y="56" width="44" height="22" rx="4" fill="#cbd0ff"/><rect x="153" y="42" width="44" height="36" rx="4" fill="#aeb4f2"/><rect x="219" y="29" width="44" height="49" rx="4" fill="#858fe5"/><rect x="285" y="45" width="44" height="33" rx="4" fill="#aeb4f2"/><rect x="351" y="18" width="44" height="60" rx="4" fill="#737edf"/><path d="m430 66 35-21 33 9 38-34" stroke="#737edf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="430" cy="66" r="4" fill="#737edf"/><circle cx="465" cy="45" r="4" fill="#737edf"/><circle cx="498" cy="54" r="4" fill="#737edf"/><circle cx="536" cy="20" r="4" fill="#737edf"/><path d="M68 23h100" stroke="#dce0f5" stroke-width="5" stroke-linecap="round"/></svg></div><div class="card-top"><div class="tag">Data analysis · Internship</div><span class="card-index">04</span></div><div><h3>Finding patterns in data</h3><p>Applied Python-based analysis and customer segmentation techniques to explore transaction trends and surface useful signals for decision-making.</p><div class="card-meta"><span>Python</span><span>Data analysis</span><span>Segmentation</span></div></div></article>
         </div>
+          </div>
+        </div>
       </section>
+
+
 
     </main>
 
     <footer><span>© 2026 Khushi Agarwal</span><div class="footer-links"><a href="https://www.linkedin.com/in/khushi771" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/Khushi771" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></footer>
   </div>
   <script>
-    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+    const tabs = Array.from(document.querySelectorAll('nav [role="tab"]'));
+    const panels = Array.from(document.querySelectorAll('main > [role="tabpanel"]'));
     function activateTab(id, updateLocation = true) {
       const selected = document.getElementById(`tab-${id}`);
       if (!selected) return;
@@ -327,6 +399,11 @@
     document.querySelectorAll('[data-open-tab]').forEach(control => control.addEventListener('click', event => {
       if (control.tagName === 'A') event.preventDefault();
       activateTab(control.dataset.openTab);
+    }));
+    document.querySelectorAll('.mobile-view-toggle button').forEach(button => button.addEventListener('click', () => {
+      const view = button.dataset.mobileView;
+      document.querySelector('.combined-layout').dataset.mobileView = view;
+      document.querySelectorAll('.mobile-view-toggle button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     }));
     const initialTab = location.hash.replace('#', '');
     if (initialTab && document.getElementById(`tab-${initialTab}`)) activateTab(initialTab, false);
