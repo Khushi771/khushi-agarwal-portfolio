@@ -225,66 +225,54 @@
       .work-grid { height: calc(100% - 120px); }
     }
 
-    .experience-panel, .work-panel { display: grid; grid-template-rows: auto minmax(0, 1fr); padding-block: 24px; }
-    .experience-panel .section-head, .work-panel .section-head { align-items: center; gap: 28px; margin-bottom: 15px; }
-    .experience-panel h2, .work-panel h2 { font-size: clamp(30px, 4vw, 42px); }
-    .experience-content { min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 12px; }
-    .role-overview { grid-template-columns: 135px minmax(0, 1fr); align-items: center; gap: 20px; padding: 15px 20px; background: var(--surface); }
+    .experience-panel, .highlights-panel { display: grid; grid-template-rows: auto minmax(0, 1fr); padding-block: 24px; }
+    .experience-panel .section-head, .highlights-panel .section-head { align-items: center; gap: 22px; margin-bottom: 18px; }
+    .experience-panel h2, .highlights-panel h2 { font-size: clamp(28px, 3.2vw, 36px); }
+    .experience-content { min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 14px; }
+    .role-overview { grid-template-columns: 145px minmax(0, 1fr); gap: 20px; padding: 18px 22px; background: #fff; }
     .role-overview .period { font-size: 10px; }
     .role-overview h3 { font-size: 18px; }
-    .role-overview .place { margin-bottom: 6px; font-size: 10px; }
-    .role-overview .body-copy { font-size: 11px; line-height: 1.5; }
+    .role-overview .place { font-size: 10px; }
+    .role-overview .body-copy { font-size: 11px; line-height: 1.55; }
     .focus-grid { min-height: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 1fr; gap: 12px; }
-    .focus-card { justify-content: center; padding: 20px; }
-    .focus-card h3 { margin-bottom: 8px; font-size: 17px; }
-    .focus-card p { font-size: 11px; line-height: 1.6; }
-    .focus-tags { margin-top: 8px; font-size: 9px; }
-    .work-panel .work-grid { width: 100%; height: auto; min-height: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .work-panel .card { padding: 12px 14px 14px; }
-    .work-panel .card-art { flex-basis: 62px; margin-bottom: 7px; }
-    .work-panel .card .tag { font-size: 9px; }
-    .work-panel .card h3 { margin: 6px 0 5px; font-size: 15px; }
-    .work-panel .card p { font-size: 10px; line-height: 1.45; }
-    .work-panel .card > div:last-child { display: flex; flex: 1; flex-direction: column; }
-    .work-panel .card-meta { gap: 5px; padding-top: 7px; }
-    .work-panel .card-meta span { padding: 4px 6px; font-size: 8px; }
+    .focus-card { justify-content: center; padding: 22px; }
+    .highlights-panel .work-grid { width: 100%; height: auto; min-height: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .highlights-panel .card { padding: 14px 16px; }
+    .highlights-panel .card-art { flex-basis: 74px; }
+    .highlights-panel .card h3 { font-size: 16px; }
+    .highlights-panel .card p { font-size: 10px; line-height: 1.5; }
     @media (max-width: 760px) {
-      .experience-panel, .work-panel { padding-block: 20px; }
-      .experience-panel .section-head, .work-panel .section-head { align-items: start; flex-direction: column; gap: 7px; margin-bottom: 12px; }
-      .experience-panel .section-note, .work-panel .section-note { font-size: 10px; }
-      .role-overview { grid-template-columns: 110px minmax(0, 1fr); gap: 14px; padding: 13px 15px; }
+      .experience-panel, .highlights-panel { padding-block: 18px; }
+      .experience-panel .section-head, .highlights-panel .section-head { align-items: start; gap: 8px; margin-bottom: 12px; }
+      .experience-panel .section-note, .highlights-panel .section-note { display: none; }
+      .experience-content { gap: 10px; }
+      .role-overview { grid-template-columns: 100px minmax(0, 1fr); gap: 10px; padding: 13px; }
+      .role-overview .body-copy { font-size: 10px; }
       .focus-grid { gap: 8px; }
       .focus-card { padding: 13px; }
-      .focus-card h3 { font-size: 15px; }
-      .focus-card p { font-size: 10px; }
-      .work-panel .work-grid { gap: 9px; }
-      .work-panel .card { padding: 10px; }
-      .work-panel .card-art { flex-basis: 54px; }
-      .work-panel .card h3 { font-size: 14px; }
-      .work-panel .card p { font-size: 9px; }
+      .highlights-panel .work-grid { gap: 8px; }
+      .highlights-panel .card { padding: 10px; }
+      .highlights-panel .card-art { flex-basis: 52px; }
     }
     @media (max-width: 520px) {
-      .experience-panel .section-head, .work-panel .section-head { gap: 5px; margin-bottom: 8px; }
-      .experience-panel .section-note, .work-panel .section-note { display: none; }
-      .experience-panel h2, .work-panel h2 { font-size: 29px; }
-      .experience-content { grid-template-rows: auto minmax(0, 1fr); gap: 8px; }
-      .role-overview { grid-template-columns: 80px minmax(0, 1fr); align-items: start; gap: 8px; padding: 9px; }
-      .role-overview .period { font-size: 8px; }
+      .experience-panel, .highlights-panel { padding-block: 15px; }
+      .experience-content { gap: 8px; }
+      .role-overview { grid-template-columns: 76px minmax(0, 1fr); gap: 7px; padding: 9px; }
+      .role-overview .period, .role-overview .place { font-size: 8px; }
       .role-overview h3 { font-size: 15px; }
-      .role-overview .place { font-size: 8px; }
-      .role-overview .body-copy { font-size: 8px; line-height: 1.35; }
-      .focus-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 5px; }
-      .focus-card { padding: 6px 9px; }
-      .focus-card h3 { margin-bottom: 2px; font-size: 12px; }
-      .focus-card p { font-size: 8px; line-height: 1.3; }
-      .focus-tags { margin-top: 3px; font-size: 7px; }
-      .work-panel .work-grid { gap: 7px; }
-      .work-panel .card { padding: 8px; }
-      .work-panel .card-art { flex-basis: 42px; margin-bottom: 5px; }
-      .work-panel .card .tag { font-size: 7px; letter-spacing: .08em; }
-      .work-panel .card h3 { font-size: 12px; }
-      .work-panel .card p { font-size: 8px; line-height: 1.35; }
-      .work-panel .card-meta { display: none; }
+      .role-overview .body-copy { font-size: 9px; line-height: 1.4; }
+      .focus-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 6px; }
+      .focus-card { padding: 8px 10px; }
+      .focus-card h3 { margin-bottom: 3px; font-size: 13px; }
+      .focus-card p { font-size: 9px; line-height: 1.35; }
+      .focus-tags { margin-top: 4px; font-size: 8px; }
+      .highlights-panel .work-grid { gap: 7px; }
+      .highlights-panel .card { padding: 8px; }
+      .highlights-panel .card-art { flex-basis: 38px; margin-bottom: 4px; }
+      .highlights-panel .card .tag { font-size: 7px; }
+      .highlights-panel .card h3 { margin: 4px 0 3px; font-size: 12px; }
+      .highlights-panel .card p { font-size: 8px; line-height: 1.35; }
+      .highlights-panel .card-meta { display: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -302,7 +290,7 @@
         <nav role="tablist" aria-label="Portfolio sections">
           <button class="tab" id="tab-home" type="button" role="tab" aria-controls="panel-home" aria-selected="true">Home</button>
           <button class="tab" id="tab-experience" type="button" role="tab" aria-controls="panel-experience" aria-selected="false" tabindex="-1">Experience</button>
-          <button class="tab" id="tab-work" type="button" role="tab" aria-controls="panel-work" aria-selected="false" tabindex="-1">Highlights</button>
+          <button class="tab" id="tab-highlights" type="button" role="tab" aria-controls="panel-highlights" aria-selected="false" tabindex="-1">Highlights</button>
         </nav>
         <div class="header-actions">
           <a class="connect-link" href="https://www.linkedin.com/in/khushi771" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -320,13 +308,17 @@
           <div class="eyebrow">AI Software Engineer · Bengaluru, India</div>
           <h1>Building useful AI<br>and <em>software systems.</em></h1>
           <p class="intro">I’m Khushi Agarwal, an AI Software Engineer who enjoys turning ideas into practical software. After studying Mechanical Engineering at IIT Guwahati, I found my way into AI and backend development, where I enjoy learning, sharing ideas, and helping others grow through mentoring.</p>
-          <div class="hero-links"><button class="button" type="button" data-open-tab="work">Explore my work <span aria-hidden="true">&nbsp;↓</span></button><a class="button secondary" href="https://www.linkedin.com/in/khushi771" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">&nbsp;↗</span></a></div>
+          <div class="hero-links"><button class="button" type="button" data-open-tab="highlights">Explore my work <span aria-hidden="true">&nbsp;↓</span></button><a class="button secondary" href="https://www.linkedin.com/in/khushi771" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">&nbsp;↗</span></a></div>
         </div>
         <div class="hero-art" aria-label="Abstract illustration representing AI and software systems" role="img">
           <div class="art-glow"></div><div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div>
           <span class="orbit-node node-a"></span><span class="orbit-node node-b"></span><span class="orbit-node node-c"></span>
-          <div clas      <section class="panel experience-panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="0" hidden>
-        <div class="section-head"><div class="section-title"><h2>Experience</h2></div><p class="section-note">I work across applied AI, backend services, and developer platforms, building practical tools with business and engineering teams.</p></div>
+          <div class="monogram" aria-hidden="true">KA</div><div class="art-caption"><strong>AI</strong> &nbsp;×&nbsp; systems</div>
+        </div>
+      </section>
+
+      <section class="panel experience-panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="0" hidden>
+        <div class="section-head"><div class="section-title"><h2>Experience</h2></div><p class="section-note">The work I do today, and the parts of engineering I enjoy most.</p></div>
         <div class="experience-content">
           <article class="role-overview"><div class="period">Aug 2024 — Present<br>Bengaluru, India</div><div><h3>Development Engineer</h3><p class="place">Standard Chartered Global Banking Services</p><p class="body-copy">My current role brings together product thinking and hands-on engineering. I help clarify business needs, shape technical approaches, and build capabilities that can be adopted by teams across a large, regulated organization.</p></div></article>
           <div class="focus-grid">
@@ -334,27 +326,16 @@
           <article class="focus-card"><h3>Reusable platforms</h3><p>Build shared workflow services and deployment patterns that make it easier for teams to adopt process automation.</p><div class="focus-tags">Java · Kubernetes · Helm</div></article>
           <article class="focus-card"><h3>Backend systems</h3><p>Develop services that coordinate multi-step processes, with attention to reliability, traceability, and maintainability.</p><div class="focus-tags">Quarkus · Microservices · APIs</div></article>
         </div>
-          </div>
-          <div class="work-column">
-        <div class="work-grid">
-          <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><rect x="38" y="20" width="62" height="78" rx="6" fill="#fff" stroke="#cbd0ec"/><path d="M52 40h34M52 51h27M52 62h31M52 73h19" stroke="#929bdd" stroke-width="3" stroke-linecap="round"/><circle cx="183" cy="58" r="20" fill="#e9eaff" stroke="#a9aff0"/><circle cx="260" cy="35" r="10" fill="#d9ddff"/><circle cx="267" cy="83" r="13" fill="#d9ddff"/><path d="m101 58 62 0m40-8 48-13m-48 29 51 15m13-42 95 0m-95 44 95 0" stroke="#838ce0" stroke-width="2" stroke-dasharray="4 5"/><rect x="359" y="23" width="130" height="26" rx="13" fill="#f1f2ff"/><rect x="359" y="64" width="180" height="26" rx="13" fill="#e9eaff"/><circle cx="376" cy="36" r="5" fill="#6874d9"/><circle cx="376" cy="77" r="5" fill="#6874d9"/><path d="M390 36h80m-80 41h123" stroke="#a0a7e8" stroke-width="3" stroke-linecap="round"/></svg></div><div class="card-top"><div class="tag">Applied AI · Retrieval</div><span class="card-index">01</span></div><div><h3>Smarter document workflows</h3><p>Worked on AI-assisted document processing, translating expert knowledge into structured workflows and exploring ways to make language-model outputs more useful and grounded.</p><div class="card-meta"><span>LLMs</span><span>RAG</span><span>Process design</span></div></div></article>
-          <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><rect x="36" y="35" width="94" height="44" rx="8" fill="#fff" stroke="#cbd0ec"/><rect x="255" y="18" width="94" height="44" rx="8" fill="#f1f2ff" stroke="#cbd0ec"/><rect x="255" y="68" width="94" height="38" rx="8" fill="#f1f2ff" stroke="#cbd0ec"/><rect x="468" y="35" width="94" height="44" rx="8" fill="#fff" stroke="#cbd0ec"/><path d="M130 57h61q17 0 17-17v0q0-10 17-10h30m-108 27h30q17 0 17 17v0q0 13 17 13h30m94-57h50q18 0 18 18v9m-68 30h50q18 0 18-18V62" stroke="#838ce0" stroke-width="3" stroke-linecap="round"/><circle cx="83" cy="57" r="8" fill="#737edf"/><circle cx="302" cy="40" r="8" fill="#737edf"/><circle cx="302" cy="87" r="8" fill="#737edf"/><circle cx="515" cy="57" r="8" fill="#737edf"/><path d="M98 57h17m202-17h17m-17 47h17m202-30h17" stroke="#a0a7e8" stroke-width="3" stroke-linecap="round"/></svg></div><div class="card-top"><div class="tag">Backend · Developer experience</div><span class="card-index">02</span></div><div><h3>Reusable workflow foundations</h3><p>Created shared workflow capabilities and deployment patterns that helped teams integrate process automation more consistently across services and environments.</p><div class="card-meta"><span>Microservices</span><span>Workflow systems
         </div>
       </section>
-      <section class="panel work-panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" tabindex="0" hidden>
-        <div class="section-head"><div class="section-title"><h2>Engineering Highlights</h2></div><p class="section-note">A few high-level themes from my work. Internal project details remain private.</p></div>
+
+      <section class="panel highlights-panel" id="panel-highlights" role="tabpanel" aria-labelledby="tab-highlights" tabindex="0" hidden>
+        <div class="section-head"><div class="section-title"><h2>Highlights</h2></div><p class="section-note">A few themes from the products and systems I’ve helped shape.</p></div>
         <div class="work-grid">
           <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><rect x="38" y="20" width="62" height="78" rx="6" fill="#fff" stroke="#cbd0ec"/><path d="M52 40h34M52 51h27M52 62h31M52 73h19" stroke="#929bdd" stroke-width="3" stroke-linecap="round"/><circle cx="183" cy="58" r="20" fill="#e9eaff" stroke="#a9aff0"/><circle cx="260" cy="35" r="10" fill="#d9ddff"/><circle cx="267" cy="83" r="13" fill="#d9ddff"/><path d="m101 58 62 0m40-8 48-13m-48 29 51 15m13-42 95 0m-95 44 95 0" stroke="#838ce0" stroke-width="2" stroke-dasharray="4 5"/><rect x="359" y="23" width="130" height="26" rx="13" fill="#f1f2ff"/><rect x="359" y="64" width="180" height="26" rx="13" fill="#e9eaff"/><circle cx="376" cy="36" r="5" fill="#6874d9"/><circle cx="376" cy="77" r="5" fill="#6874d9"/><path d="M390 36h80m-80 41h123" stroke="#a0a7e8" stroke-width="3" stroke-linecap="round"/></svg></div><div class="card-top"><div class="tag">Applied AI · Retrieval</div><span class="card-index">01</span></div><div><h3>Smarter document workflows</h3><p>Worked on AI-assisted document processing, translating expert knowledge into structured workflows and exploring ways to make language-model outputs more useful and grounded.</p><div class="card-meta"><span>LLMs</span><span>RAG</span><span>Process design</span></div></div></article>
           <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><rect x="36" y="35" width="94" height="44" rx="8" fill="#fff" stroke="#cbd0ec"/><rect x="255" y="18" width="94" height="44" rx="8" fill="#f1f2ff" stroke="#cbd0ec"/><rect x="255" y="68" width="94" height="38" rx="8" fill="#f1f2ff" stroke="#cbd0ec"/><rect x="468" y="35" width="94" height="44" rx="8" fill="#fff" stroke="#cbd0ec"/><path d="M130 57h61q17 0 17-17v0q0-10 17-10h30m-108 27h30q17 0 17 17v0q0 13 17 13h30m94-57h50q18 0 18 18v9m-68 30h50q18 0 18-18V62" stroke="#838ce0" stroke-width="3" stroke-linecap="round"/><circle cx="83" cy="57" r="8" fill="#737edf"/><circle cx="302" cy="40" r="8" fill="#737edf"/><circle cx="302" cy="87" r="8" fill="#737edf"/><circle cx="515" cy="57" r="8" fill="#737edf"/><path d="M98 57h17m202-17h17m-17 47h17m202-30h17" stroke="#a0a7e8" stroke-width="3" stroke-linecap="round"/></svg></div><div class="card-top"><div class="tag">Backend · Developer experience</div><span class="card-index">02</span></div><div><h3>Reusable workflow foundations</h3><p>Created shared workflow capabilities and deployment patterns that helped teams integrate process automation more consistently across services and environments.</p><div class="card-meta"><span>Microservices</span><span>Workflow systems</span><span>Platform</span></div></div></article>
           <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><rect x="54" y="18" width="91" height="82" rx="8" fill="#fff" stroke="#cbd0ec"/><path d="M75 40h50M75 54h50M75 68h50M75 82h34" stroke="#a0a7e8" stroke-width="4" stroke-linecap="round"/><circle cx="99" cy="31" r="3" fill="#737edf"/><path d="M145 59h71m0 0 35-27m-35 27 35 27m0-54h53m-53 54h53m0-54 36 27m-36 27 36-27h87" stroke="#838ce0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 5"/><circle cx="216" cy="59" r="7" fill="#737edf"/><circle cx="251" cy="32" r="7" fill="#aeb4f2"/><circle cx="251" cy="86" r="7" fill="#aeb4f2"/><circle cx="304" cy="32" r="7" fill="#737edf"/><circle cx="304" cy="86" r="7" fill="#737edf"/><rect x="396" y="23" width="127" height="72" rx="8" fill="#f1f2ff" stroke="#cbd0ec"/><path d="M414 43h91m-91 15h69m-69 15h80" stroke="#a0a7e8" stroke-width="4" stroke-linecap="round"/><circle cx="500" cy="43" r="3" fill="#737edf"/></svg></div><div class="card-top"><div class="tag">Microservices · Orchestration</div><span class="card-index">03</span></div><div><h3>Coordinating complex processes</h3><p>Developed backend services and workflow orchestration for multi-step processes, with an emphasis on traceability, reliability, and collaboration with business stakeholders.</p><div class="card-meta"><span>Java</span><span>REST APIs</span><span>Orchestration</span></div></div></article>
           <article class="card"><div class="card-art" aria-hidden="true"><svg viewBox="0 0 600 120" fill="none"><path d="M0 91h600M0 103h600" stroke="#dce0f5"/><path d="M52 78h493" stroke="#cbd0ec" stroke-width="2"/><rect x="87" y="56" width="44" height="22" rx="4" fill="#cbd0ff"/><rect x="153" y="42" width="44" height="36" rx="4" fill="#aeb4f2"/><rect x="219" y="29" width="44" height="49" rx="4" fill="#858fe5"/><rect x="285" y="45" width="44" height="33" rx="4" fill="#aeb4f2"/><rect x="351" y="18" width="44" height="60" rx="4" fill="#737edf"/><path d="m430 66 35-21 33 9 38-34" stroke="#737edf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="430" cy="66" r="4" fill="#737edf"/><circle cx="465" cy="45" r="4" fill="#737edf"/><circle cx="498" cy="54" r="4" fill="#737edf"/><circle cx="536" cy="20" r="4" fill="#737edf"/><path d="M68 23h100" stroke="#dce0f5" stroke-width="5" stroke-linecap="round"/></svg></div><div class="card-top"><div class="tag">Data analysis · Internship</div><span class="card-index">04</span></div><div><h3>Finding patterns in data</h3><p>Applied Python-based analysis and customer segmentation techniques to explore transaction trends and surface useful signals for decision-making.</p><div class="card-meta"><span>Python</span><span>Data analysis</span><span>Segmentation</span></div></div></article>
-        </div>
-          </div>
-        </div>
-      </section>
-      </section>on</span><span>Data analysis</span><span>Segmentation</span></div></div></article>
-        </div>
-          </div>
         </div>
       </section>
 
